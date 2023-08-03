@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailTemplateApp", "EmailTemplateApp.csproj", "{FB54A1C9-EC8B-41AD-9092-0B07CDC4775E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB54A1C9-EC8B-41AD-9092-0B07CDC4775E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB54A1C9-EC8B-41AD-9092-0B07CDC4775E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB54A1C9-EC8B-41AD-9092-0B07CDC4775E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB54A1C9-EC8B-41AD-9092-0B07CDC4775E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE541080-9B97-47ED-B63E-0809EF1A421B}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "Template 1",
+    "Body": "Dear Sir/Madam, ..."
+  },
+  {
+    "Name": "Template 2",
+    "Body": "Dear Customer, ..."
+  }
+  // add more templates as needed
+]
