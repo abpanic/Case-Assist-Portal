@@ -1,35 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Hosting;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using EmailTemplateApp.Models;
-using System.IO;
+﻿using EmailTemplateApp.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-public class HomeController : Controller
+namespace EmailTemplateApp.Controllers
 {
-    private readonly IWebHostEnvironment _env;
-
-    public HomeController(IWebHostEnvironment env)
+    public class HomeController : Controller
     {
-        _env = env;
+        private readonly ApplicationDbContext _context;
+
+        public HomeController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<IActionResult> ViewTemplate(int id)
+        {
+            var template = await _context.EmailTemplates.FindAsync(id);
+            if (template == null)
+            {
+                return NotFound();
+            }
+
+            // Update the visit count
+            template.VisitCount++;
+            await _context.SaveChangesAsync();
+
+            return View(template);
+        }
+
     }
-
-    public IActionResult Index()
-    {
-        // Load email templates from JSON file
-        var emailTemplates = LoadEmailTemplatesFromJson();
-        ViewBag.EmailTemplates = emailTemplates;
-
-        return View();
-    }
-
-    private List<EmailTemplate> LoadEmailTemplatesFromJson()
-    {
-        var path = Path.Combine(_env.ContentRootPath, "App_Data", "EmailTemplates.json");
-        var json = System.IO.File.ReadAllText(path);
-        var emailTemplates = JsonConvert.DeserializeObject<List<EmailTemplate>>(json);
-
-        return emailTemplates ?? new List<EmailTemplate>();
-    }
-
 }

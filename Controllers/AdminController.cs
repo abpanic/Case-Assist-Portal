@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EmailTemplateApp.Data;
+using EmailTemplateApp.Models;
 
-namespace EmailTemplateApp.Models
+namespace EmailTemplateApp.Controllers
 {
     public class AdminController : Controller
     {
